@@ -35,16 +35,16 @@ export default function RdvForm() {
     if (selectedSpecialite) {
       setLoading(true)
       fetch(
-        `http://localhost:3000/api/findDoctor/${selectedSpecialite}`
+        `http://localhost:3000/api/findDoctor?specialite=${selectedSpecialite}`
       )
         .then((response) => {
-          console.log(response)
           if (!response.ok) {
             throw new Error("Erreur de réponse")
           }
           return response.json()
         })
         .then((data) => {
+          console.log(data)
           setDoctors(data)
           setLoading(false)
         })
@@ -107,7 +107,7 @@ export default function RdvForm() {
             <option value="">Médecin</option>
             {doctors.map((doctor, index) => (
               <option key={index} value={doctor.doctorId}>
-                {doctor.name}
+                Dr.{doctor.lastname}
               </option>
             ))}
           </select>
