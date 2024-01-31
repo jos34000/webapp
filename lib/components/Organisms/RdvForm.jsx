@@ -1,6 +1,5 @@
 "use client"
 import { useState, useEffect } from "react"
-import "@/app/globals.css"
 
 export default function RdvForm() {
   const [doctor, setDoctor] = useState("")
@@ -38,7 +37,7 @@ export default function RdvForm() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <h1 className="text-4xl font-bold text-center mb-10">
-        Book an Appointment
+        Réservez un créneau
       </h1>
       <form onSubmit={handleSubmit} className="w-full max-w-xl">
         <div className="mb-6">
@@ -46,7 +45,7 @@ export default function RdvForm() {
             htmlFor="specialty"
             className="block mb-2 text-sm font-medium text-gray-900"
           >
-            Specialty
+            Spécialité
           </label>
           <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
             {specialites.map((specialite, index) => (
@@ -61,14 +60,14 @@ export default function RdvForm() {
             htmlFor="doctor"
             className="block mb-2 text-sm font-medium text-gray-900"
           >
-            Doctor
+            Docteur
           </label>
           <select
             value={doctor}
             onChange={(e) => setDoctor(e.target.value)}
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           >
-            <option value="">Select</option>
+            <option value="">Médecin</option>
             <option value="dr1">Dr. John Doe</option>
             <option value="dr2">Dr. Jane Smith</option>
           </select>
@@ -99,7 +98,7 @@ export default function RdvForm() {
             onChange={(e) => setTime(e.target.value)}
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           >
-            <option value="">Select</option>
+            <option value="">Heure</option>
             <option value="9:00">9:00</option>
             <option value="9:30">9:30</option>
             <option value="10:00">10:00</option>
@@ -110,7 +109,7 @@ export default function RdvForm() {
           type="submit"
           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
         >
-          Book
+          Réserver
         </button>
       </form>
     </div>

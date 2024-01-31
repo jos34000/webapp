@@ -1,7 +1,6 @@
 // components/Header.js
 import Link from "next/link"
 import { HiOutlineUserCircle } from "react-icons/hi"
-import "../../../app/globals.css"
 
 export default function Header() {
   return (
