@@ -1,7 +1,15 @@
 "use client"
+import Header from "@/lib/components/Organisms/Header.jsx"
 import RdvForm from "@/lib/components/Organisms/RdvForm"
-import { useState, useEffect } from "react"
+import Footer from "@/lib/components/Organisms/Footer.jsx"
+import "@/app/globals.css"
 
 export default function Home() {
-  return <RdvForm />
+  return (
+    <>
+      <Header />
+      <RdvForm />
+      <Footer />
+    </>
+  )
 }

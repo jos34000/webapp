@@ -1,31 +1,42 @@
-import { useState, useEffect } from "react"
+// components/Header.js
+import Link from "next/link"
+import { HiOutlineUserCircle } from "react-icons/hi"
+import "../../../app/globals.css"
 
-const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
-
+export default function Header() {
   return (
-    <header class="h-64 bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white">
-      <h1 class="text-4xl font-bold cursor-pointer hover:text-gray-200 transition duration-300">
-        My Beautiful Header
-      </h1>
+    <header className="bg-white shadow">
+      <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
+          <h1 className="text-3xl font-bold text-gray-900">
+            <Link href="/" legacyBehavior>
+              <a>HealthCare</a>
+            </Link>
+          </h1>
+          <nav>
+            <ul className="flex space-x-4">
+              <li>
+                <Link href="/specialites" legacyBehavior>
+                  <a className="text-gray-500 hover:text-gray-900">
+                    Specialties
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/doctors" legacyBehavior>
+                  <a className="text-gray-500 hover:text-gray-900">Doctors</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" legacyBehavior>
+                  <a className="text-gray-500 hover:text-gray-900">About</a>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <HiOutlineUserCircle className="text-gray-500 hover:text-gray-900 w-8 h-8 cursor-pointer" />
+        </div>
+      </div>
     </header>
   )
 }
-
-export default Header

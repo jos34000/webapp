@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
+import "@/app/globals.css"
 
 export default function RdvForm() {
   const [doctor, setDoctor] = useState("")
