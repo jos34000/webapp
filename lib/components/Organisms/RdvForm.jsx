@@ -2,10 +2,12 @@
 import { useState, useEffect } from "react"
 
 export default function RdvForm() {
+  const [specialites, setSpecialites] = useState([])
+  const [doctors, setDoctors] = useState([])
+  const [selectedSpecialite, setSelectedSpecialite] = useState(null)
   const [doctor, setDoctor] = useState("")
   const [date, setDate] = useState("")
   const [time, setTime] = useState("")
-  const [specialites, setSpecialites] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
@@ -29,6 +31,36 @@ export default function RdvForm() {
       })
   }, [])
 
+  useEffect(() => {
+    if (selectedSpecialite) {
+      setLoading(true)
+      fetch(
+        `http://localhost:3000/api/findDoctor/${selectedSpecialite}`
+      )
+        .then((response) => {
+          console.log(response)
+          if (!response.ok) {
+            throw new Error("Erreur de réponse")
+          }
+          return response.json()
+        })
+        .then((data) => {
+          setDoctors(data)
+          setLoading(false)
+        })
+        .catch((error) => {
+          setError(error)
+          setLoading(false)
+        })
+    } else {
+      setDoctors([])
+    }
+  }, [selectedSpecialite])
+
+  const handleSpecialiteChange = (e) => {
+    setSelectedSpecialite(e.target.value)
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     // code to book appointment
@@ -47,7 +79,12 @@ export default function RdvForm() {
           >
             Spécialité
           </label>
-          <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+          <select
+            value={selectedSpecialite}
+            onChange={handleSpecialiteChange}
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          >
+            <option value="">Spécialité</option>
             {specialites.map((specialite, index) => (
               <option key={index} value={specialite.specialiteId}>
                 {specialite.name}
@@ -68,8 +105,11 @@ export default function RdvForm() {
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           >
             <option value="">Médecin</option>
-            <option value="dr1">Dr. John Doe</option>
-            <option value="dr2">Dr. Jane Smith</option>
+            {doctors.map((doctor, index) => (
+              <option key={index} value={doctor.doctorId}>
+                {doctor.name}
+              </option>
+            ))}
           </select>
         </div>
         <div className="mb-6">
