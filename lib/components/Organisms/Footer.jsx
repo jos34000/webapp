@@ -1,8 +1,6 @@
 // components/Footer.js
-import React from "react"
 import Link from "next/link"
 import { HiOutlineMail } from "react-icons/hi"
-import "../../../app/globals.css"
 
 export default function Footer() {
   return (

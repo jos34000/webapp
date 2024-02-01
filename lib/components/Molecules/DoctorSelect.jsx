@@ -1,4 +1,18 @@
-export default function DoctorSelect({ doctors, doctor, setDoctor }) {
+import React from "react"
+import { useState } from "react"
+import useSpecialites from "@/lib/Hooks/useSpecialites"
+import useDoctors from "@/lib/Hooks/useDoctor"
+
+export default function DoctorSelect() {
+  const [doctor, setDoctor] = useState("")
+  const [selectedSpecialite, setSelectedSpecialite] = useState(null)
+
+  const {
+    doctors,
+    loading: loadingDoctors,
+    error: errorDoctors,
+  } = useDoctors(selectedSpecialite)
+
   return (
     <div className="mb-6">
       <label

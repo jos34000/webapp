@@ -1,8 +1,21 @@
-export default function SpecialiteSelect({
-  specialites,
-  selectedSpecialite,
-  handleSpecialiteChange,
-}) {
+/* Imports */
+import React from "react"
+import { useState } from "react"
+import useSpecialites from "@/lib/Hooks/useSpecialites"
+
+export default function SpecialiteSelect() {
+  const [selectedSpecialite, setSelectedSpecialite] = useState(null)
+
+  const {
+    specialites,
+    loading: loadingSpecialites,
+    error: errorSpecialites,
+  } = useSpecialites()
+
+  const handleSpecialiteChange = (e) => {
+    setSelectedSpecialite(e.target.value)
+  }
+
   return (
     <div className="mb-6">
       <label
