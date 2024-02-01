@@ -1,4 +1,3 @@
-import { useState } from "react"
 import useDoctors from "@/lib/Hooks/useDoctor"
 
 export default function DoctorSelect({ specialiteId, onDoctorChange, doctor }) {

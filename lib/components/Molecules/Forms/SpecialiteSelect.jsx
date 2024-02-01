@@ -8,8 +8,10 @@ export default function SpecialiteSelect({
   const { specialites, loading, error } = useSpecialites()
 
   const handleSpecialiteChange = (e) => {
-    const specialiteId = e.target.value
-    onSpecialiteChange(specialiteId)
+    if (onSpecialiteChange) {
+      const specialiteId = e.target.value
+      onSpecialiteChange(specialiteId)
+    }
   }
 
   return (
