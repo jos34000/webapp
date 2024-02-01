@@ -1,17 +1,13 @@
-import React from "react"
 import { useState } from "react"
-import useSpecialites from "@/lib/Hooks/useSpecialites"
 import useDoctors from "@/lib/Hooks/useDoctor"
 
-export default function DoctorSelect() {
-  const [doctor, setDoctor] = useState("")
-  const [selectedSpecialite, setSelectedSpecialite] = useState(null)
+export default function DoctorSelect({ specialiteId, onDoctorChange, doctor }) {
+  const { doctors, loading, error } = useDoctors(specialiteId)
 
-  const {
-    doctors,
-    loading: loadingDoctors,
-    error: errorDoctors,
-  } = useDoctors(selectedSpecialite)
+  const handleDoctorChange = (e) => {
+    const doctorId = e.target.value
+    onDoctorChange(doctorId)
+  }
 
   return (
     <div className="mb-6">
@@ -23,7 +19,7 @@ export default function DoctorSelect() {
       </label>
       <select
         value={doctor}
-        onChange={(e) => setDoctor(e.target.value)}
+        onChange={handleDoctorChange}
         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
       >
         <option value="">Médecin</option>
@@ -33,6 +29,7 @@ export default function DoctorSelect() {
           </option>
         ))}
       </select>
+      {error && <p>{error.message}</p>}
     </div>
   )
 }

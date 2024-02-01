@@ -1,19 +1,15 @@
-/* Imports */
-import React from "react"
 import { useState } from "react"
 import useSpecialites from "@/lib/Hooks/useSpecialites"
 
-export default function SpecialiteSelect() {
-  const [selectedSpecialite, setSelectedSpecialite] = useState(null)
-
-  const {
-    specialites,
-    loading: loadingSpecialites,
-    error: errorSpecialites,
-  } = useSpecialites()
+export default function SpecialiteSelect({
+  onSpecialiteChange,
+  selectedSpecialite,
+}) {
+  const { specialites, loading, error } = useSpecialites()
 
   const handleSpecialiteChange = (e) => {
-    setSelectedSpecialite(e.target.value)
+    const specialiteId = e.target.value
+    onSpecialiteChange(specialiteId)
   }
 
   return (
@@ -25,7 +21,7 @@ export default function SpecialiteSelect() {
         Spécialité
       </label>
       <select
-        value={selectedSpecialite}
+        value={selectedSpecialite || ""}
         onChange={handleSpecialiteChange}
         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
       >
@@ -36,6 +32,8 @@ export default function SpecialiteSelect() {
           </option>
         ))}
       </select>
+      {loading && <p>Chargement...</p>}
+      {error && <p>{error.message}</p>}
     </div>
   )
 }
