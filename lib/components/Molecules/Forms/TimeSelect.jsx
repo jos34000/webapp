@@ -1,7 +1,7 @@
 import useTimes from "@/lib/Hooks/useTimes.js"
 
-export default function TimeSelect({ doctorId, onTimeChange, time }) {
-  const { times, loading, error } = useTimes(doctorId)
+export default function TimeSelect({ doctorId, date, onTimeChange, time }) {
+  const { times, loading, error } = useTimes(doctorId, date)
 
   const handleTimeChange = (e) => {
     const timeId = e.target.value

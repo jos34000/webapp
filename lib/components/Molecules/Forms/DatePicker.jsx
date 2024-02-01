@@ -1,8 +1,13 @@
 import React from "react"
 import { useState } from "react"
 
-export default function DatePicker() {
-  const [date, setDate] = useState("")
+export default function DatePicker({ date, onDateChange }) {
+  const [day, setDay] = useState("")
+  const handleDateChange = (e) => {
+    const date = e.target.value
+    onDateChange(date)
+  }
+
   return (
     <div className="mb-6">
       <label
@@ -14,7 +19,7 @@ export default function DatePicker() {
       <input
         type="date"
         value={date}
-        onChange={(e) => setDate(e.target.value)}
+        onChange={handleDateChange}
         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
       />
     </div>

@@ -3,18 +3,25 @@ import SpecialiteSelect from "@/lib/components/Molecules/Forms/SpecialiteSelect"
 import DoctorSelect from "@/lib/components/Molecules/Forms/DoctorSelect"
 import DatePicker from "@/lib/components/Molecules/Forms/DatePicker.jsx"
 import TimeSelect from "../Molecules/Forms/TimeSelect.jsx"
+import { parse } from "date-fns"
 
 export default function RdvForm() {
-  const [selectedSpecialite, setSelectedSpecialite] = useState(null)
+  const [specialite, setSpecialite] = useState(null)
   const [doctor, setDoctor] = useState("")
+  const [date, setDate] = useState("")
   const [time, setTime] = useState("")
 
   const handleSpecialiteChange = (specialiteId) => {
-    setSelectedSpecialite(specialiteId)
+    setSpecialite(specialiteId)
   }
 
   const handleDoctorChange = (doctorId) => {
     setDoctor(doctorId)
+  }
+
+  const handleDateChange = (date) => {
+    setDate(date)
+    console.log(date)
   }
 
   const handleTimeChange = (time) => {
@@ -26,6 +33,8 @@ export default function RdvForm() {
     // code to book appointment
   }
 
+  /* console.log(parse("01/02/2024", "dd/MM/yyyy", new Date())) */
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <h1 className="text-4xl font-bold text-center mb-10">
@@ -34,16 +43,17 @@ export default function RdvForm() {
       <form onSubmit={handleSubmit} className="w-full max-w-xl">
         <SpecialiteSelect
           onSpecialiteChange={handleSpecialiteChange}
-          selectedSpecialite={selectedSpecialite}
+          selectedSpecialite={specialite}
         />
         <DoctorSelect
-          specialiteId={selectedSpecialite}
+          specialiteId={specialite}
           onDoctorChange={handleDoctorChange}
           doctor={doctor}
         />
-        <DatePicker />
+        <DatePicker onDateChange={handleDateChange} date={date} />
         <TimeSelect
           doctorId={doctor}
+          date={date}
           onTimeChange={handleTimeChange}
           time={time}
         />
