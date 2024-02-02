@@ -5,7 +5,8 @@ export default function TimeSelect({ doctorId, date, onTimeChange, time }) {
 
   const handleTimeChange = (e) => {
     const timeId = e.target.value
-    onTimeChange(timeId)
+    const dispoId = times.find((time) => time.timeslot === timeId).dispoId
+    onTimeChange({ timeId, dispoId })
   }
 
   return (
@@ -17,7 +18,7 @@ export default function TimeSelect({ doctorId, date, onTimeChange, time }) {
         Time
       </label>
       <select
-        value={time}
+        value={time.timeslot}
         onChange={handleTimeChange}
         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
       >

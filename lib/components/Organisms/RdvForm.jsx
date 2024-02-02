@@ -2,38 +2,22 @@ import { useState } from "react"
 import SpecialiteSelect from "@/lib/components/Molecules/Forms/SpecialiteSelect"
 import DoctorSelect from "@/lib/components/Molecules/Forms/DoctorSelect"
 import DatePicker from "@/lib/components/Molecules/Forms/DatePicker.jsx"
-import TimeSelect from "../Molecules/Forms/TimeSelect.jsx"
-import { parse } from "date-fns"
+import TimeSelect from "@/lib/components/Molecules/Forms/TimeSelect.jsx"
+import SubmitButton from "@/lib/components/Molecules/Forms/SubmitButton.jsx"
+import useRdvForm from "@/lib/Hooks/useRdvForm"
 
 export default function RdvForm() {
-  const [specialite, setSpecialite] = useState(null)
-  const [doctor, setDoctor] = useState("")
-  const [date, setDate] = useState("")
-  const [time, setTime] = useState("")
-
-  const handleSpecialiteChange = (specialiteId) => {
-    setSpecialite(specialiteId)
-  }
-
-  const handleDoctorChange = (doctorId) => {
-    setDoctor(doctorId)
-  }
-
-  const handleDateChange = (date) => {
-    setDate(date)
-    console.log(date)
-  }
-
-  const handleTimeChange = (time) => {
-    setTime(time)
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // code to book appointment
-  }
-
-  /* console.log(parse("01/02/2024", "dd/MM/yyyy", new Date())) */
+  const {
+    specialite,
+    doctor,
+    date,
+    time,
+    handleSpecialiteChange,
+    handleDoctorChange,
+    handleDateChange,
+    handleTimeChange,
+    handleSubmit,
+  } = useRdvForm()
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
@@ -57,6 +41,7 @@ export default function RdvForm() {
           onTimeChange={handleTimeChange}
           time={time}
         />
+        <SubmitButton />
       </form>
     </div>
   )
