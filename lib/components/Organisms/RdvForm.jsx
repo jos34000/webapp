@@ -4,6 +4,7 @@ import DoctorSelect from "@/lib/components/Molecules/Forms/DoctorSelect"
 import DatePicker from "@/lib/components/Molecules/Forms/DatePicker.jsx"
 import TimeSelect from "@/lib/components/Molecules/Forms/TimeSelect.jsx"
 import SubmitButton from "@/lib/components/Molecules/Forms/SubmitButton.jsx"
+import EnterMotif from "@/lib/components/Molecules/Forms/EnterMotif.jsx"
 import useRdvForm from "@/lib/Hooks/useRdvForm"
 
 export default function RdvForm() {
@@ -12,10 +13,12 @@ export default function RdvForm() {
     doctor,
     date,
     time,
+    motif,
     handleSpecialiteChange,
     handleDoctorChange,
     handleDateChange,
     handleTimeChange,
+    handleMotifChange,
     handleSubmit,
   } = useRdvForm()
 
@@ -41,6 +44,7 @@ export default function RdvForm() {
           onTimeChange={handleTimeChange}
           time={time}
         />
+        <EnterMotif onMotifChange={handleMotifChange} motif={motif} />
         <SubmitButton />
       </form>
     </div>

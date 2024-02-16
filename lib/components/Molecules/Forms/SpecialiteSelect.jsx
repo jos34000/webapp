@@ -1,4 +1,3 @@
-import { useState } from "react"
 import useSpecialites from "@/lib/Hooks/useSpecialites"
 
 export default function SpecialiteSelect({
