@@ -14,9 +14,7 @@ export default function TimeSelect({ doctorId, date, onTimeChange, time }) {
       <label
         htmlFor="time"
         className="block mb-2 text-sm font-medium text-gray-900"
-      >
-        Time
-      </label>
+      ></label>
       <select
         value={time.timeslot}
         onChange={handleTimeChange}

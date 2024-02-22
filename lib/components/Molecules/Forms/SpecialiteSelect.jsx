@@ -18,9 +18,7 @@ export default function SpecialiteSelect({
       <label
         htmlFor="specialty"
         className="block mb-2 text-sm font-medium text-gray-900"
-      >
-        Spécialité
-      </label>
+      ></label>
       <select
         value={selectedSpecialite || ""}
         onChange={handleSpecialiteChange}

@@ -13,9 +13,7 @@ export default function DoctorSelect({ specialiteId, onDoctorChange, doctor }) {
       <label
         htmlFor="doctor"
         className="block mb-2 text-sm font-medium text-gray-900"
-      >
-        Docteur
-      </label>
+      ></label>
       <select
         value={doctor}
         onChange={handleDoctorChange}

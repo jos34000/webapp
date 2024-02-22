@@ -1,5 +1,3 @@
-import useMotif from "@/lib/Hooks/useMotif"
-
 export default function EnterMotif({ onMotifChange, motif }) {
   const handleMotifChange = (e) => {
     if (onMotifChange) {
@@ -12,9 +10,7 @@ export default function EnterMotif({ onMotifChange, motif }) {
       <label
         htmlFor="time"
         className="block mb-2 text-sm font-medium text-gray-900"
-      >
-        Time
-      </label>
+      ></label>
       <input
         value={motif}
         onChange={handleMotifChange}
