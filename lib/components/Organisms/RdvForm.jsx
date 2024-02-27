@@ -1,10 +1,10 @@
 import { useState } from "react"
-import SpecialiteSelect from "@/lib/components/Molecules/Forms/SpecialiteSelect"
-import DoctorSelect from "@/lib/components/Molecules/Forms/DoctorSelect"
-import DatePicker from "@/lib/components/Molecules/Forms/DatePicker.jsx"
-import TimeSelect from "@/lib/components/Molecules/Forms/TimeSelect.jsx"
-import SubmitButton from "@/lib/components/Molecules/Forms/SubmitButton.jsx"
-import EnterMotif from "@/lib/components/Molecules/Forms/EnterMotif.jsx"
+import SpecialiteSelect from "@/lib/components/Molecules/Rdv/SpecialiteSelect"
+import DoctorSelect from "@/lib/components/Molecules/Rdv/DoctorSelect"
+import DatePicker from "@/lib/components/Molecules/Rdv/DatePicker.jsx"
+import TimeSelect from "@/lib/components/Molecules/Rdv/TimeSelect.jsx"
+import SubmitButton from "@/lib/components/Molecules/Rdv/SubmitButton.jsx"
+import EnterMotif from "@/lib/components/Molecules/Rdv/EnterMotif.jsx"
 import useRdvForm from "@/lib/Hooks/useRdvForm"
 
 export default function RdvForm() {
