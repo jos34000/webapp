@@ -1,9 +1,9 @@
 "use client"
-import Footer from "@/lib/components/Organisms/Footer.jsx"
-import Header from "@/lib/components/Organisms/Header.jsx"
-import RdvForm from "@/lib/components/Organisms/RdvForm.jsx"
+import Footer from "@/lib/components/Organisms/Footer"
+import Header from "@/lib/components/Organisms/Header"
+import RdvForm from "@/lib/components/Organisms/RdvForm"
 
-export default function Home() {
+export default function Rdv() {
   return (
     <>
       <Header />
