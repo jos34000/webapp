@@ -11,7 +11,14 @@ const SectionTitle = ({ isLoginForm }) => (
   </div>
 )
 
-const TextInput = ({ label, type = "text", placeholder, value, onChange }) => (
+const TextInput = ({
+  label,
+  type = "text",
+  placeholder,
+  value,
+  onChange,
+  name,
+}) => (
   <div className="flex flex-col flex-1">
     <label className="font-medium text-white">{label}</label>
     <input
@@ -21,11 +28,12 @@ const TextInput = ({ label, type = "text", placeholder, value, onChange }) => (
       aria-label={label}
       value={value}
       onChange={onChange}
+      name={name}
     />
   </div>
 )
 
-const PasswordInput = ({ value, onChange }) => {
+const PasswordInput = ({ value, onChange, name }) => {
   const [showPassword, setShowPassword] = useState(false)
 
   return (
@@ -39,6 +47,7 @@ const PasswordInput = ({ value, onChange }) => {
           aria-label="Mot de passe"
           value={value}
           onChange={onChange}
+          name={name}
         />
         <button
           type="button"
@@ -113,9 +122,13 @@ const HealthcareApp = () => {
   const [password, setPassword] = useState("")
   const [isLogin, setIsLogin] = useState(true)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    const email = e.target.email.value
+    const password = e.target.password.value
     e.preventDefault()
-    // Validation logic here
+    if (isLogin) {
+    } else {
+    }
   }
 
   return (
@@ -130,6 +143,7 @@ const HealthcareApp = () => {
           <TextInput
             label="Adresse e-mail"
             type="email"
+            name="email"
             placeholder="Entrez votre adresse e-mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -146,6 +160,7 @@ const HealthcareApp = () => {
           <PasswordInput
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            name="password"
           />
           {!isLogin && (
             <>
