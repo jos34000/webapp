@@ -1,4 +1,3 @@
-import { useState } from "react"
 import SpecialiteSelect from "@/lib/components/Molecules/Rdv/SpecialiteSelect"
 import DoctorSelect from "@/lib/components/Molecules/Rdv/DoctorSelect"
 import DatePicker from "@/lib/components/Molecules/Rdv/DatePicker.jsx"
