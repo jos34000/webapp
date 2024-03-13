@@ -27,7 +27,7 @@ export default function Login() {
         onSubmit={handleSubmit}
       >
         <TextInput
-          label="Adresse e-mail"
+          label="Email"
           type="email"
           name="email"
           placeholder="Entrez votre adresse e-mail"
@@ -36,7 +36,7 @@ export default function Login() {
         />
         {!isLogin && (
           <TextInput
-            label="Confirmez l'email"
+            label="ConfirmEmail"
             type="email"
             placeholder="Confirmez votre adresse e-mail"
             value={confirmEmail}
@@ -44,6 +44,7 @@ export default function Login() {
           />
         )}
         <PasswordInput
+          label="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           name="password"

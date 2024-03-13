@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-const PasswordInput = ({ value, onChange, name }) => {
+const PasswordInput = ({ value, onChange, name, label }) => {
   const [showPassword, setShowPassword] = useState(false)
 
   return (
@@ -10,7 +10,7 @@ const PasswordInput = ({ value, onChange, name }) => {
           type={showPassword ? "text" : "password"}
           placeholder="Entrez votre mot de passe"
           className="justify-center py-3 px-4 mt-2 rounded-lg bg-zinc-800 text-stone-300 w-full"
-          aria-label="Mot de passe"
+          aria-label={label}
           value={value}
           onChange={onChange}
           name={name}

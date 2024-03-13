@@ -7,7 +7,9 @@ const TextInput = ({
   name,
 }) => (
   <div className="flex flex-col flex-1">
-    <label className="font-medium text-white">{label}</label>
+    <label className="font-medium text-white" name={label}>
+      {label}
+    </label>
     <input
       type={type}
       placeholder={placeholder}
