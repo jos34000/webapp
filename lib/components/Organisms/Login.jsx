@@ -55,9 +55,13 @@ export default function Login() {
             <TextInput label="Prénom" placeholder="Entrez votre prénom" />
           </>
         )}
-        <FormButton isLoginForm={isLogin} />
+        <FormButton isLoginForm={isLogin} label="connexion" />
       </form>
-      <ToggleSwitch isOn={!isLogin} toggle={() => setIsLogin(!isLogin)} />
+      <ToggleSwitch
+        isOn={!isLogin}
+        toggle={() => setIsLogin(!isLogin)}
+        label="Switch"
+      />
     </div>
   )
 }

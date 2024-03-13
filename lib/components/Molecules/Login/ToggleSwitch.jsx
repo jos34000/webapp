@@ -1,9 +1,10 @@
-const ToggleSwitch = ({ isOn, toggle }) => (
+const ToggleSwitch = ({ isOn, toggle, label }) => (
   <div className="flex justify-center mt-4">
     <label className="flex items-center cursor-pointer">
       <div className="relative">
         <input
           type="checkbox"
+          aria-label={label}
           className="sr-only"
           checked={isOn}
           onChange={toggle}
