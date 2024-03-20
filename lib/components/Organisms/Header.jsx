@@ -34,7 +34,9 @@ export default function Header() {
             </ul>
           </nav>
           <Link href="/login" legacyBehavior>
-            <HiOutlineUserCircle className="text-gray-500 hover:text-gray-900 w-8 h-8 cursor-pointer" />
+            <a>
+              <HiOutlineUserCircle className="text-gray-500 hover:text-gray-900 w-8 h-8 cursor-pointer" />
+            </a>
           </Link>
         </div>
       </div>

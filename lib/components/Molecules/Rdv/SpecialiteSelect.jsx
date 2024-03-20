@@ -27,12 +27,10 @@ export default function SpecialiteSelect({
         <option value="">Spécialité</option>
         {specialites.map((specialite, index) => (
           <option key={index} value={specialite.specialiteId}>
-            {specialite.name}
+            {specialite.specialite}
           </option>
         ))}
       </select>
-      {loading && <p>Chargement...</p>}
-      {error && <p>{error.message}</p>}
     </div>
   )
 }
