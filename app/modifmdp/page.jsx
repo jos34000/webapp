@@ -13,7 +13,7 @@ function InputField({ label, placeholder }) {
   )
 }
 
-function MyComponent() {
+function ModifMdp() {
   const inputFields = [
     {
       label: "Current Password",
@@ -52,4 +52,4 @@ function MyComponent() {
   )
 }
 
-export default MyComponent
+export default ModifMdp
