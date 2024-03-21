@@ -32,14 +32,14 @@ const PasswordInput = ({ value, onChange, name, label }) => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M13.875 18.825A10.05 10.05 0 0112 19c-5.523 0-10-4.477-10-10 0-.338.028-.672.082-.998M15 9l.01.001M9 15l.01.001M7.757 4.243l.01.001M12 5l.01.001M3 3l18 18"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0zm7-3a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             ) : (
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0zm7-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                d="M13.875 18.825A10.05 10.05 0 0112 19c-5.523 0-10-4.477-10-10 0-.338.028-.672.082-.998M15 9l.01.001M9 15l.01.001M7.757 4.243l.01.001M12 5l.01.001M3 3l18 18"
               />
             )}
           </svg>

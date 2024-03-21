@@ -12,18 +12,20 @@ export default function Header() {
               <a>HealthCare</a>
             </Link>
           </h1>
-          <nav>
+          <nav className="hidden md:flex">
             <ul className="flex space-x-4">
               <li>
-                <Link href="/specialites" legacyBehavior>
-                  <a className="text-gray-500 hover:text-gray-900">
-                    Specialties
+                <Link href="/" legacyBehavior>
+                  <a className="text-gray-500 hover:text-gray-900 mr-10">
+                    Home
                   </a>
                 </Link>
               </li>
               <li>
-                <Link href="/doctors" legacyBehavior>
-                  <a className="text-gray-500 hover:text-gray-900">Doctors</a>
+                <Link href="/rdv" legacyBehavior>
+                  <a className="text-gray-500 hover:text-gray-900 mr-10">
+                    Rendez-vous
+                  </a>
                 </Link>
               </li>
               <li>

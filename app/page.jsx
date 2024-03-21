@@ -21,9 +21,9 @@ const SpecialtyCard = ({ src, alt, specialty, description }) => (
 )
 
 // Define a reusable component for ServiceCard
-const ServiceCard = ({ imgSrc, alt, title, content }) => (
-  <article className="flex flex-col grow px-4 py-4 w-full rounded-lg border border-solid bg-neutral-800 border-neutral-700 max-md:mt-3">
-    <img className="w-6 aspect-square" loading="lazy" src={imgSrc} alt={alt} />
+const ServiceCard = ({ src, alt, title, content }) => (
+  <article className="flex flex-col grow px-4 py-4 w-full rounded-lg border border-solid bg-neutral-800 border-neutral-700 max-md:mt-3 mt-8">
+    <img className="w-6 aspect-square" loading="lazy" src={src} alt={alt} />
     <h3 className="mt-3 text-base font-bold text-white">{title}</h3>
     <p className="mt-1 text-sm leading-5 text-stone-300">{content}</p>
   </article>
@@ -70,42 +70,6 @@ function HealthCare() {
               encore. Lisez les avis vérifiés des patients et prenez rendez-vous
               avec un médecin vérifié.
             </p>
-            <section className="p-4 bg-gray-700 rounded-md max-w-xs w-full mx-auto">
-              <form className="flex items-center gap-2" onSubmit={handleSubmit}>
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/27f2789ad191e910a0652f73b9fb5c3ba38712eb3502474a45b84bd294c14f04?apiKey=3f0228c97dfd4d3398207a5ad823f317&"
-                  alt="Search icon"
-                  className="w-5 h-5 object-cover"
-                />
-                <input
-                  type="text"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  placeholder="Search..."
-                  className="flex-1 py-1 px-2 text-sm rounded bg-gray-600 text-white focus:outline-none"
-                />
-                <button
-                  type="submit"
-                  className="px-2 py-1 bg-green-500 text-white rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-opacity-50 text-sm"
-                >
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                  </svg>
-                </button>
-              </form>
-            </section>
           </div>
         </section>
         <section className="flex flex-col px-4 py-10 mt-4 w-full max-w-[960px] max-md:max-w-full">
@@ -119,29 +83,29 @@ function HealthCare() {
           </p>
           <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
             <ServiceCard
-              imgsrc="https://cdn.builder.io/api/v1/image/assets/TEMP/c0c21c17a87aeb89a87984a09b45b3355de1aa8f04eb97596e492236faf89ecb?apiKey=3f0228c97dfd4d3398207a5ad823f317&"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/c0c21c17a87aeb89a87984a09b45b3355de1aa8f04eb97596e492236faf89ecb?apiKey=3f0228c97dfd4d3398207a5ad823f317&"
               alt="Checkmark"
               title="Avis Vérifiés"
               content="Nos avis sont rédigés par de vrais patients. Vous pouvez les lire avant de choisir un médecin."
             />
             <ServiceCard
-              imgsrc="https://cdn.builder.io/api/v1/image/assets/TEMP/c1936ee5e07962c60483db09bbeedae1db498c8ad6976ec016ebdab34c2534e6?apiKey=3f0228c97dfd4d3398207a5ad823f317&"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/c1936ee5e07962c60483db09bbeedae1db498c8ad6976ec016ebdab34c2534e6?apiKey=3f0228c97dfd4d3398207a5ad823f317&"
               alt="Location pin"
               title="Proximité"
               content="Nous vous montrons les médecins près de chez vous qui acceptent votre assurance. C'est gratuit."
             />
             <ServiceCard
-              imgsrc="https://cdn.builder.io/api/v1/image/assets/TEMP/17e968187257c3b96abe0fae4181637826d5db25d6489b7058edc6c2423abf6d?apiKey=3f0228c97dfd4d3398207a5ad823f317&"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/17e968187257c3b96abe0fae4181637826d5db25d6489b7058edc6c2423abf6d?apiKey=3f0228c97dfd4d3398207a5ad823f317&"
               alt="Calendar"
               title="Réservation en Ligne"
               content="Réservez des rendez-vous en ligne. C'est facile, rapide et gratuit."
             />
-            <ServiceCard
-              imgsrc="https://cdn.builder.io/api/v1/image/assets/TEMP/3dd2bb30219bb0f535180152b0fbbced275f5f77f4b802233c9ada6eea1ddc8f?apiKey=3f0228c97dfd4d3398207a5ad823f317&"
+            {/* <ServiceCard
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3dd2bb30219bb0f535180152b0fbbced275f5f77f4b802233c9ada6eea1ddc8f?apiKey=3f0228c97dfd4d3398207a5ad823f317&"
               alt="Money bag"
               title="Tarification Transparente"
               content="Vous pouvez voir le coût de votre visite et si votre assurance le couvre."
-            />
+            /> */}
           </div>
         </section>
         <section className="flex gap-3 px-5 mt-4 w-full max-w-[928px] max-md:flex-wrap max-md:max-w-full">
@@ -209,7 +173,7 @@ function HealthCare() {
           />
         </section>
       </main>
-      <Footer/>
+      <Footer />
     </>
   )
 }
