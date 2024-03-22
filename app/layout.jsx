@@ -5,10 +5,12 @@ import Footer from "@/lib/components/Molecules/Footer.jsx"
 
 export default function RootLayout({ children, session }) {
   return (
-    <div>
-      <Header />
-      {children}
-      <Footer />
-    </div>
+    <html lang="fr">
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
+    </html>
   )
 }
