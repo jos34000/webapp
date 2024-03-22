@@ -1,9 +1,9 @@
-import SpecialiteSelect from "@/lib/components/Molecules/Rdv/SpecialiteSelect"
-import DoctorSelect from "@/lib/components/Molecules/Rdv/DoctorSelect"
-import DatePicker from "@/lib/components/Molecules/Rdv/DatePicker.jsx"
-import TimeSelect from "@/lib/components/Molecules/Rdv/TimeSelect.jsx"
-import SubmitButton from "@/lib/components/Molecules/Rdv/SubmitButton.jsx"
-import EnterMotif from "@/lib/components/Molecules/Rdv/EnterMotif.jsx"
+import SpecialiteSelect from "@/lib/components/Atoms/Rdv/SpecialiteSelect"
+import DoctorSelect from "@/lib/components/Atoms/Rdv/DoctorSelect"
+import DatePicker from "@/lib/components/Atoms/Rdv/DatePicker.jsx"
+import TimeSelect from "@/lib/components/Atoms/Rdv/TimeSelect.jsx"
+import SubmitButton from "@/lib/components/Atoms/Rdv/SubmitButton.jsx"
+import EnterMotif from "@/lib/components/Atoms/Rdv/EnterMotif.jsx"
 import useRdvForm from "@/lib/Hooks/useRdvForm"
 
 export default function RdvForm() {

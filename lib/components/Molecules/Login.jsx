@@ -1,9 +1,9 @@
 import React from "react"
-import TextInput from "@/lib/components/Molecules/Login/TextInput"
-import PasswordInput from "@/lib/components/Molecules/Login/PasswordInput"
-import SectionTitle from "@/lib/components/Molecules/Login/SectionTitle"
-import FormButton from "@/lib/components/Molecules/Login/FormButton"
-import ToggleSwitch from "@/lib/components/Molecules/Login/ToggleSwitch"
+import TextInput from "@/lib/components/Atoms/Login/TextInput"
+import PasswordInput from "@/lib/components/Atoms/Login/PasswordInput"
+import SectionTitle from "@/lib/components/Atoms/Login/SectionTitle"
+import FormButton from "@/lib/components/Atoms/Login/FormButton"
+import ToggleSwitch from "@/lib/components/Atoms/Login/ToggleSwitch"
 import useLogin from "@/lib/Hooks/useLogin"
 
 export default function Login() {

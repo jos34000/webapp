@@ -1,6 +1,4 @@
 import * as React from "react"
-import Header from "@/lib/components/Organisms/Header.jsx"
-import Footer from "@/lib/components/Organisms/Footer.jsx"
 
 function MedicalHistoryItem({ history, index }) {
   return (
@@ -14,7 +12,6 @@ function MedicalHistoryItem({ history, index }) {
 function ModifAntecedents() {
   return (
     <div className="flex flex-col justify-center min-h-screen">
-      <Header />
       <section className="flex flex-col items-center px-20 pt-10 pb-20 w-full bg-neutral-900 max-md:px-5 flex-grow">
         <h1 className="justify-center items-start self-center p-4 mt-5 max-w-full text-3xl font-bold tracking-tighter text-white w-[960px] max-md:pr-5 max-md:max-w-full">
           Gestion des antécédents médicaux
@@ -40,7 +37,6 @@ function ModifAntecedents() {
           </button>
         </div>
       </section>
-      <Footer />
     </div>
   )
 }

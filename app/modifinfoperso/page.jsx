@@ -1,6 +1,4 @@
 import React from "react"
-import Header from "@/lib/components/Organisms/Header.jsx"
-import Footer from "@/lib/components/Organisms/Footer.jsx"
 
 function InputField({ label, className }) {
   return (
@@ -18,7 +16,6 @@ function InputField({ label, className }) {
 function ModifInfoPerso() {
   return (
     <div className="flex flex-col justify-center min-h-screen">
-      <Header />
       <section className="flex flex-col items-center px-20 pt-10 pb-20 text-base font-bold text-white bg-neutral-900 max-md:px-5 flex-grow">
         <h1 className="justify-center items-start p-4 max-w-full text-3xl tracking-tighter w-[512px] max-md:pr-5">
           Edit Personal Information
@@ -37,7 +34,6 @@ function ModifInfoPerso() {
           Save Changes
         </button>
       </section>
-      <Footer />
     </div>
   )
 }

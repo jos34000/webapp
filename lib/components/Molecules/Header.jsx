@@ -30,7 +30,7 @@ export default function Header() {
               </li>
               <li>
                 <Link href="/about" legacyBehavior>
-                  <a className="text-gray-500 hover:text-gray-900">About</a>
+                  <a className="text-gray-500 hover:text-gray-900">A propos</a>
                 </Link>
               </li>
             </ul>

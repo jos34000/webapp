@@ -1,17 +1,6 @@
 import React from "react"
-import Header from "@/lib/components/Organisms/Header.jsx"
-import Footer from "@/lib/components/Organisms/Footer.jsx"
 
-function InputField({ label, placeholder }) {
-  return (
-    <>
-      <div className="mt-6 leading-[150%] max-md:max-w-full">{label}</div>
-      <div className="justify-center items-start p-4 mt-2 max-w-full rounded-xl bg-zinc-800 leading-[150%] text-stone-300 w-[480px] max-md:pr-5">
-        {placeholder}
-      </div>
-    </>
-  )
-}
+import InputField from "@/lib/components/Atoms/Modif/InputField"
 
 function ModifMdp() {
   const inputFields = [
@@ -31,7 +20,6 @@ function ModifMdp() {
 
   return (
     <div className="flex flex-col justify-center min-h-screen">
-      <Header />
       <section className="flex flex-col items-center px-20 pt-10 pb-20 w-full bg-neutral-900 max-md:px-5 flex-grow">
         <h1 className="justify-center items-start p-4 max-w-full text-3xl font-bold tracking-tighter w-[512px] max-md:pr-5">
           Change Password
@@ -47,7 +35,6 @@ function ModifMdp() {
           Save
         </button>
       </section>
-      <Footer />
     </div>
   )
 }
