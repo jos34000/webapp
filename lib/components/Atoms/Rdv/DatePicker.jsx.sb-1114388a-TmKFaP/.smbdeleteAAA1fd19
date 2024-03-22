@@ -13,7 +13,9 @@ export default function DatePicker({ date, onDateChange }) {
       <label
         htmlFor="date"
         className="block mb-2 text-sm font-medium text-gray-900"
-      ></label>
+      >
+       
+      </label>
       <input
         type="date"
         value={date}
