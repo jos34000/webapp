@@ -36,9 +36,7 @@ function ModifAntecedents() {
           </div>
         </button>
         {showPopup && <HistoryPopUp />}
-        <section className="flex flex-col self-center px-4 mt-3 w-full text-base leading-6 text-white max-w-[960px] max-md:max-w-full">
-          <HistoryItem />
-        </section>
+        <section className="flex flex-col self-center px-4 mt-3 w-full text-base leading-6 text-white max-w-[960px] max-md:max-w-full"></section>
         <div className="flex flex-col mt-3 ml-44 max-w-full font-bold leading-[150%] w-[480px]">
           <button className="flex justify-center items-center px-4 py-2.5 text-sm tracking-wide text-white rounded-xl bg-neutral-900 max-md:px-5 max-md:max-w-full">
             <div className="justify-center bg-neutral-900">
