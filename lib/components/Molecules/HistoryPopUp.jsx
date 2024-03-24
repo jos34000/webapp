@@ -1,16 +1,23 @@
 import React from "react"
-import HistorySelect from "@/lib/components/Atoms/Modif/HistorySelect.jsx"
+import HistorySelect from "@/lib/components/Atoms/Modif/HistorySelect"
+import DatePicker from "../Atoms/Rdv/DatePicker.jsx"
+import useHistoryForm from "@/lib/Hooks/useHistoryForm.js"
+
 function HistoryPopUp() {
+  const { history, handleHistoryChange, comment, handleComment, handleSubmit } =
+    useHistoryForm()
   return (
     <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
       <form className="flex flex-col px-4 py-5 max-w-full w-[512px]">
-        <HistorySelect />
+        <HistorySelect
+          onHistoryChange={handleHistoryChange}
+          history={history}
+        />
         <label htmlFor="antecedentDate" className="mt-6 max-md:max-w-full">
           Date de l'antécédent médical
         </label>
-        <div className="justify-center items-start p-4 mt-2 rounded-xl bg-zinc-800 text-stone-300 max-md:pr-5 max-md:max-w-full">
-          Sélectionner une date
-        </div>
+        <DatePicker />
+
         <label htmlFor="commentaires" className="mt-6 max-md:max-w-full">
           Commentaires supplémentaires
         </label>

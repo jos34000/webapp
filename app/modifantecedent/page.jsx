@@ -1,6 +1,6 @@
 "use client"
 import React from "react"
-import AntecedentPopUp from "@/lib/components/Molecules/HistoryPopUp"
+import HistoryPopUp from "@/lib/components/Molecules/HistoryPopUp"
 import { useState } from "react"
 
 function HistoryItem({ history }) {
@@ -35,7 +35,7 @@ function ModifAntecedents() {
             Ajouter des antécédents
           </div>
         </button>
-        {showPopup && <AntecedentPopUp />}
+        {showPopup && <HistoryPopUp />}
         <section className="flex flex-col self-center px-4 mt-3 w-full text-base leading-6 text-white max-w-[960px] max-md:max-w-full">
           <HistoryItem />
         </section>
