@@ -26,7 +26,7 @@ function HistoryPopUp() {
         <DatePicker
           label="Date de l'antécédent médical"
           value={date}
-          onChange={handleDateChange}
+          onDateChange={handleDateChange}
         />
 
         <EnterComment value={comment} onChange={handleCommentChange} />
