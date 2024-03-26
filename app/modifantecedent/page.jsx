@@ -1,16 +1,9 @@
 "use client"
 import React from "react"
 import HistoryPopUp from "@/lib/components/Molecules/HistoryPopUp"
+import HistoryItem from "@/lib/components/Atoms/Modif/HistoryItem"
+import useHistory from "@/lib/Hooks/useHistory"
 import { useState } from "react"
-
-function HistoryItem({ history }) {
-  return (
-    <div className="flex gap-3 justify-between py-3 max-md:flex-wrap max-md:max-w-full">
-      <div>{history}</div>
-      <input type="checkbox" className="accent-green-400" />
-    </div>
-  )
-}
 
 function ModifAntecedents() {
   const [showPopup, setShowPopup] = useState(false)
@@ -21,6 +14,24 @@ function ModifAntecedents() {
   const handleClosePopup = () => {
     setShowPopup(false)
   }
+
+  const histories = useHistory()
+
+  const [checkedItems, setCheckedItems] = useState([])
+
+  const handleCheck = (item, isChecked) => {
+    if (isChecked) {
+      setCheckedItems([...checkedItems, item.patienthistoryId])
+    } else {
+      setCheckedItems((id) => id !== item.patienthistoryId)
+    }
+  }
+
+  const handleDeleteSelected = () => {
+    // Utilisez checkedItems pour déterminer quels éléments supprimer
+    // ...
+  }
+
   return (
     <div className="flex flex-col justify-center min-h-screen">
       <section className="flex flex-col items-center px-20 pt-10 pb-20 w-full bg-neutral-900 max-md:px-5 flex-grow">
@@ -35,8 +46,18 @@ function ModifAntecedents() {
             Ajouter des antécédents
           </div>
         </button>
-        {showPopup && <HistoryPopUp />}
-        <section className="flex flex-col self-center px-4 mt-3 w-full text-base leading-6 text-white max-w-[960px] max-md:max-w-full"></section>
+        {showPopup && <HistoryPopUp closePopUp={handleClosePopup} />}
+        <section className="flex flex-col self-center px-4 mt-3 w-full text-base leading-6 text-white max-w-[960px] max-md:max-w-full">
+          {histories?.map((history, index) => (
+            <HistoryItem
+              key={index}
+              history={history.history.antecedent}
+              diagnosticDate={history.diagnosticDate}
+              comment={history.commentaires}
+              onCheck={(isChecked) => handleCheck(history, isChecked)}
+            />
+          ))}
+        </section>
         <div className="flex flex-col mt-3 ml-44 max-w-full font-bold leading-[150%] w-[480px]">
           <button className="flex justify-center items-center px-4 py-2.5 text-sm tracking-wide text-white rounded-xl bg-neutral-900 max-md:px-5 max-md:max-w-full">
             <div className="justify-center bg-neutral-900">
