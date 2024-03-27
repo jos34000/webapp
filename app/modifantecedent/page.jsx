@@ -2,7 +2,7 @@
 import React from "react"
 import HistoryPopUp from "@/lib/components/Molecules/HistoryPopUp"
 import HistoryItem from "@/lib/components/Atoms/Modif/HistoryItem"
-import useHistory from "@/lib/Hooks/useHistory"
+import usePatientHistory from "@/lib/Hooks/usePatientHistory"
 import { useState } from "react"
 
 function ModifAntecedents() {
@@ -15,7 +15,7 @@ function ModifAntecedents() {
     setShowPopup(false)
   }
 
-  const histories = useHistory()
+  const histories = usePatientHistory()
 
   const [checkedItems, setCheckedItems] = useState([])
 

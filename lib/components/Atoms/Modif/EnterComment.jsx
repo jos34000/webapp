@@ -1,8 +1,8 @@
 export default function EnterComment({ onCommentChange, comment }) {
   const handleCommentChange = (e) => {
     if (onCommentChange) {
-      const motifText = e.target.value
-      onCommentChange(motifText)
+      const commentText = e.target.value
+      onCommentChange(commentText)
     }
   }
   return (

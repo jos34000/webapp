@@ -15,11 +15,16 @@ function HistoryPopUp({ closePopUp }) {
     handleSubmit,
   } = useHistoryForm()
 
+  const handleFormSubmit = async (e) => {
+    await handleSubmit(e)
+    closePopUp()
+  }
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
       <form
         className="flex flex-col px-4 py-5 max-w-full w-[512px]"
-        onSubmit={handleSubmit}
+        onSubmit={handleFormSubmit}
       >
         <HistorySelect
           onHistoryChange={handleHistoryChange}
@@ -32,7 +37,11 @@ function HistoryPopUp({ closePopUp }) {
           onDateChange={handleDateChange}
         />
 
-        <EnterComment value={comment} onChange={handleCommentChange} />
+        <EnterComment
+          value={comment}
+          onCommentChange={handleCommentChange}
+          name="comment"
+        />
         <button
           type="submit"
           className="flex justify-center items-center px-5 py-3 mt-6 font-bold tracking-wide whitespace-nowrap bg-green-400 rounded-xl text-neutral-900 max-md:mb-10 max-md:max-w-full"
