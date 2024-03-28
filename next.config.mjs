@@ -16,6 +16,15 @@ switch (process.env.NODE_ENV) {
 config({ path: resolve("/webapp", envFile) })
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "http://api:3000/api/:path*",
+      },
+    ]
+  },
+}
 
 export default nextConfig
