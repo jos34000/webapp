@@ -38,8 +38,10 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Link href="/about" legacyBehavior>
-                  <a className="text-gray-500 hover:text-gray-900">A propos</a>
+                <Link href="/download" legacyBehavior>
+                  <a className="text-gray-500 hover:text-gray-900">
+                    Téléchargements
+                  </a>
                 </Link>
               </li>
             </ul>

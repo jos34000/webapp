@@ -4,13 +4,13 @@ import { resolve } from "path"
 let envFile
 switch (process.env.NODE_ENV) {
   case "development":
-    envFile = ".env.dev"
+    envFile = ".env.development"
     break
   case "test":
     envFile = ".env.test"
     break
   default:
-    envFile = ".env.prod"
+    envFile = ".env.production"
 }
 
 config({ path: resolve("/webapp", envFile) })
@@ -21,7 +21,7 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*",
-        destination: "http://api:3000/api/:path*",
+        destination: `${process.env.API_URL}:path*`,
       },
     ]
   },
