@@ -1,6 +1,7 @@
 import React from "react"
 import AccountItem from "@/lib/components/Atoms/Modif/AccountItem"
 import Description from "@/lib/components/Atoms/Modif/Description"
+import Cookies from "js-cookie"
 
 function Account() {
   return (
