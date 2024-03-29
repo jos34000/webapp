@@ -15,7 +15,7 @@ function ModifAntecedents() {
     setShowPopup(false)
   }
 
-  const histories = usePatientHistory()
+  const { histories, handleDeleteSelected } = usePatientHistory()
 
   const [checkedItems, setCheckedItems] = useState([])
 
@@ -31,24 +31,6 @@ function ModifAntecedents() {
   useEffect(() => {
     console.log(checkedItems)
   }, [checkedItems])
-
-  const handleDeleteSelected = async () => {
-    try {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL + "deletePatientHistory",
-        {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ ids: checkedItems }),
-        }
-      )
-      setCheckedItems([])
-    } catch (error) {
-      console.log(error)
-    }
-  }
 
   return (
     <div className="flex flex-col justify-center min-h-screen">
@@ -77,14 +59,12 @@ function ModifAntecedents() {
           ))}
         </section>
         <div className="flex flex-col mt-3 ml-44 max-w-full font-bold leading-[150%] w-[480px]">
-          <button className="flex justify-center items-center px-4 py-2.5 text-sm tracking-wide text-white rounded-xl bg-neutral-900 max-md:px-5 max-md:max-w-full">
-            <div className="justify-center bg-neutral-900">
-              Supprimer la sélection
-            </div>
-          </button>
-          <button className="flex justify-center items-center px-5 py-3 mt-6 text-base tracking-wide bg-green-400 rounded-xl text-neutral-900 max-md:max-w-full">
+          <button
+            onClick={() => handleDeleteSelected(checkedItems, setCheckedItems)}
+            className="flex justify-center items-center px-5 py-3 mt-6 text-base tracking-wide bg-green-400 rounded-xl text-neutral-900 max-md:max-w-full"
+          >
             <div className="justify-center bg-green-400">
-              Enregistrer les modifications
+              Supprimer la sélection
             </div>
           </button>
         </div>

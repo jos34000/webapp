@@ -1,0 +1,14 @@
+import EditButton from "@/lib/components/Atoms/Modif/EditButton"
+
+function AccountItem({ title, href }) {
+  return (
+    <div className="flex flex-col justify-center px-4 py-3 w-full text-white bg-neutral-900 leading-[150%] max-w-[960px] max-md:max-w-full ml-8">
+      <div className="flex gap-4 justify-between max-md:flex-wrap max-md:max-w-full">
+        <div className="my-auto text-base">{title}</div>
+        <EditButton href={href} />
+      </div>
+    </div>
+  )
+}
+
+export default AccountItem
