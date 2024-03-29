@@ -3,7 +3,7 @@ import React from "react"
 import HistoryPopUp from "@/lib/components/Molecules/HistoryPopUp"
 import HistoryItem from "@/lib/components/Atoms/Modif/HistoryItem"
 import usePatientHistory from "@/lib/Hooks/usePatientHistory"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 function ModifAntecedents() {
   const [showPopup, setShowPopup] = useState(false)
@@ -20,16 +20,34 @@ function ModifAntecedents() {
   const [checkedItems, setCheckedItems] = useState([])
 
   const handleCheck = (item, isChecked) => {
-    if (isChecked) {
-      setCheckedItems([...checkedItems, item.patienthistoryId])
-    } else {
-      setCheckedItems((id) => id !== item.patienthistoryId)
-    }
+    setCheckedItems((prevCheckedItems) => {
+      if (isChecked) {
+        return [...prevCheckedItems, item.patienthistoryId]
+      } else {
+        return prevCheckedItems.filter((id) => id !== item.patienthistoryId)
+      }
+    })
   }
+  useEffect(() => {
+    console.log(checkedItems)
+  }, [checkedItems])
 
-  const handleDeleteSelected = () => {
-    // Utilisez checkedItems pour déterminer quels éléments supprimer
-    // ...
+  const handleDeleteSelected = async () => {
+    try {
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_API_URL + "deletePatientHistory",
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ids: checkedItems }),
+        }
+      )
+      setCheckedItems([])
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (

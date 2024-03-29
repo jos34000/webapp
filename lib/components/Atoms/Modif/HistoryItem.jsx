@@ -4,7 +4,9 @@ function HistoryItem({ history, diagnosticDate, comment, onCheck }) {
   const [isChecked, setIsChecked] = useState(false)
 
   const handleCheck = () => {
-    setIsChecked(!isChecked)
+    const newCheckedState = !isChecked
+    setIsChecked(newCheckedState)
+    onCheck(newCheckedState)
   }
 
   return (
@@ -21,7 +23,6 @@ function HistoryItem({ history, diagnosticDate, comment, onCheck }) {
         className="accent-green-400"
         checked={isChecked}
         onChange={handleCheck}
-        onClick={onCheck}
       />
     </div>
   )
