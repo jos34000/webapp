@@ -28,9 +28,6 @@ function ModifAntecedents() {
       }
     })
   }
-  useEffect(() => {
-    console.log(checkedItems)
-  }, [checkedItems])
 
   return (
     <div className="flex flex-col justify-center min-h-screen">

@@ -11,7 +11,6 @@ export default function RootLayout({ children }) {
       "/account",
       "/modifmdp",
       "/rdv",
-      "/modifinfoperso",
       "/modifantecedent",
     ]
     if (typeof window !== "undefined") {

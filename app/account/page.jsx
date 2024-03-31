@@ -14,8 +14,8 @@ function Account() {
         <Description decript="Modifiez votre mot de passe. Votre ancien vous sera demandé afin de pouvoir procéder à la modification." />
         <AccountItem title="Antécédents" href="/modifantecedent" />
         <Description decript="Ajoutez, modifiez, supprimez vos antécédents de santé." />
-        <AccountItem title="Informations personnelles" href="/modifinfoperso" />
-        <Description decript="Modifiez vos informations personnelles." />
+        {/* <AccountItem title="Informations personnelles" href="/modifinfoperso" />
+        <Description decript="Modifiez vos informations personnelles." /> */}
         <AccountItem title="Mes rendez-vous" href="/modifrdv" />
         <Description decript="Voir vos rendez-vous passés et à venir." />
       </div>

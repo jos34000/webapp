@@ -18,7 +18,7 @@ function ModifInfoPerso() {
     <div className="flex flex-col justify-center min-h-screen">
       <section className="flex flex-col items-center px-20 pt-10 pb-20 text-base font-bold text-white bg-neutral-900 max-md:px-5 flex-grow">
         <h1 className="justify-center items-start p-4 max-w-full text-3xl tracking-tighter w-[512px] max-md:pr-5">
-          Edit Personal Information
+          Modifiez vos informations personnelles
         </h1>
         <div className="flex gap-4 justify-center mt-3 max-w-full font-medium leading-[150%] w-[480px] max-md:flex-wrap">
           <InputField label="First Name" />
