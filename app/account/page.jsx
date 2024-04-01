@@ -1,5 +1,6 @@
 import React from "react"
 import AccountItem from "@/lib/components/Atoms/Modif/AccountItem"
+import LogoutItem from "@/lib/components/Atoms/Modif/LogoutItem"
 import Description from "@/lib/components/Atoms/Modif/Description"
 
 function Account() {
@@ -17,7 +18,7 @@ function Account() {
         <Description decript="Modifiez vos informations personnelles." /> */}
         <AccountItem title="Mes rendez-vous" href="/modifrdv" />
         <Description decript="Voir vos rendez-vous passés et à venir." />
-        <AccountItem title="Se déconnecter" href="/modifrdv" />
+        <LogoutItem title="Se déconnecter" />
         <Description decript="Se déconnecter du site." />
       </div>
     </div>

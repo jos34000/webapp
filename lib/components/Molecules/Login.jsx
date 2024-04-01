@@ -14,6 +14,12 @@ export default function Login() {
     setConfirmEmail,
     password,
     setPassword,
+    nom,
+    setNom,
+    prenom,
+    setPrenom,
+    age,
+    setAge,
     isLogin,
     setIsLogin,
     handleSubmit,
@@ -36,8 +42,9 @@ export default function Login() {
         />
         {!isLogin && (
           <TextInput
-            label="ConfirmEmail"
+            label="Confirmation Email"
             type="email"
+            name="confirmEmail"
             placeholder="Confirmez votre adresse e-mail"
             value={confirmEmail}
             onChange={(e) => setConfirmEmail(e.target.value)}
@@ -51,8 +58,30 @@ export default function Login() {
         />
         {!isLogin && (
           <>
-            <TextInput label="Nom" placeholder="Entrez votre nom" />
-            <TextInput label="Prénom" placeholder="Entrez votre prénom" />
+            <TextInput
+              label="Nom"
+              type="text"
+              name="nom"
+              placeholder="Entrez votre nom"
+              value={nom}
+              onChange={(e) => setNom(e.target.value)}
+            />
+            <TextInput
+              label="Prénom"
+              type="text"
+              name="prenom"
+              placeholder="Entrez votre prénom"
+              value={prenom}
+              onChange={(e) => setPrenom(e.target.value)}
+            />
+            <TextInput
+              label="Age"
+              type="number"
+              name="age"
+              placeholder="Entrez votre age"
+              value={age}
+              onChange={(e) => setAge(e.target.value)}
+            />
           </>
         )}
         <FormButton isLoginForm={isLogin} label="connexion" />
