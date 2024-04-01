@@ -1,7 +1,6 @@
 import React from "react"
 import AccountItem from "@/lib/components/Atoms/Modif/AccountItem"
 import Description from "@/lib/components/Atoms/Modif/Description"
-import Cookies from "js-cookie"
 
 function Account() {
   return (
@@ -18,6 +17,8 @@ function Account() {
         <Description decript="Modifiez vos informations personnelles." /> */}
         <AccountItem title="Mes rendez-vous" href="/modifrdv" />
         <Description decript="Voir vos rendez-vous passés et à venir." />
+        <AccountItem title="Se déconnecter" href="/modifrdv" />
+        <Description decript="Se déconnecter du site." />
       </div>
     </div>
   )

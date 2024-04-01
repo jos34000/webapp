@@ -3,7 +3,7 @@ import React from "react"
 import HistoryPopUp from "@/lib/components/Molecules/HistoryPopUp"
 import HistoryItem from "@/lib/components/Atoms/Modif/HistoryItem"
 import usePatientHistory from "@/lib/Hooks/usePatientHistory"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 function ModifAntecedents() {
   const [showPopup, setShowPopup] = useState(false)
