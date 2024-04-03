@@ -1,6 +1,6 @@
 "use client"
 import LogoutButton from "@/lib/components/Atoms/Modif/LogoutButton"
-import useLogout from "@/lib/hooks/useLogout"
+import useLogout from "@/lib/Hooks/useLogout"
 
 function LogoutItem({ title }) {
   const handleLogout = useLogout()
