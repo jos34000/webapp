@@ -18,7 +18,7 @@ function ModifMdp() {
     <div className="flex flex-col justify-center min-h-screen">
       <section className="flex flex-col items-center px-20 pt-10 pb-20 w-full bg-neutral-900 max-md:px-5 flex-grow">
         <h1 className="justify-center items-start p-4 max-w-full text-3xl font-bold tracking-tighter w-[512px] max-md:pr-5">
-          Change Password
+          Changer mot de passe
         </h1>
         <form onSubmit={handleSubmit}>
           <TextInput

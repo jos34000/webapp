@@ -52,7 +52,7 @@ function download() {
         <div className="flex flex-col justify-center max-w-full bg-neutral-900 w-[480px]">
           <img
             loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/137e16cfceaadd75198e3f5b3d58b35cb27420903b695db0db446e1abb4c042c?apiKey=3f0228c97dfd4d3398207a5ad823f317&"
+            src="https://img.freepik.com/free-photo/medical-banner-with-doctor-working-laptop_23-2149611211.jpg"
             alt="Main product image"
             className="w-full aspect-[2.22] max-md:max-w-full"
           />
