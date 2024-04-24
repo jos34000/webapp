@@ -7,10 +7,10 @@ function DownloadCard({ platform, fileExtension, imageUrl }) {
         <div className="flex flex-col">
           <h3 className="text-base font-bold">{platform}</h3>
           <p className="mt-1 leading-[150%] text-stone-300">
-            Download the {fileExtension} file
+            Télécharger le {fileExtension}
           </p>
           <div className="flex flex-col justify-center px-4 py-1.5 mt-4 font-medium whitespace-nowrap rounded-lg bg-zinc-800 leading-[150%] w-[99px]">
-            <button className="justify-center bg-zinc-800">Download</button>
+            <button className="justify-center bg-zinc-800">Télécharger</button>
           </div>
         </div>
         <img
@@ -58,7 +58,7 @@ function download() {
           />
         </div>
         <h2 className="mt-9 text-3xl font-bold tracking-tighter text-center text-white">
-          Choose your platform
+          Choisir votre OS
         </h2>
         {downloadOptions.map((option) => (
           <DownloadCard key={option.platform} {...option} />
