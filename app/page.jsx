@@ -39,15 +39,9 @@ function HealthCare() {
     setSearchInput(e.target.value)
   }
 
-  const handleLoginClick = () => {
-    console.log("Login clicked")
-    // Add login functionality here
-  }
+  
 
-  const handleSignUpClick = () => {
-    console.log("Sign up clicked")
-    // Add sign up functionality here
-  }
+  
   return (
     <main className="flex flex-col items-center pb-9 w-full bg-neutral-900 max-md:max-w-full">
       <section className="flex overflow-hidden relative flex-col justify-end pt-4 pl-4 mt-9 max-w-full text-base text-white rounded-xl min-h-[480px] w-[928px]">
